@@ -2,18 +2,20 @@
   <div class="home">
     <div v-if="loading">Loading</div>
     <div>
-      <news-item v-for="item in items" :key="item.id" />
+      <news-item v-for="item in items" :key="item.id" :item="item" />
     </div>
   </div>
 </template>
 
 <script>
 import { value, onCreated } from "vue-function-api";
-import NewsItem from "../components/NewsItems";
-
+import NewsItem from "../components/NewsItem";
 const baseUrl = "https://api.hackernews.io";
 
 export default {
+  components: {
+    NewsItem
+  },
   setup() {
     const items = value([]);
     const loading = value(true);
@@ -36,6 +38,8 @@ export default {
 
 <style scoped>
 .home {
+  counter-reset: news;
   background-color: #f6f6ef;
+  padding: 1em;
 }
 </style>

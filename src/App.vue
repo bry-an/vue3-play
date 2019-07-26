@@ -6,6 +6,7 @@
 </template>
 <script>
 import NavBar from "./components/Navbar";
+
 export default {
   components: {
     NavBar
@@ -15,7 +16,7 @@ export default {
 
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 body {
   font-family: "Montserrat";
 }
