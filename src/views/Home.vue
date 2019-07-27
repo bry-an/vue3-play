@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <div v-if="loading">Loading</div>
     <div>
       <news-item v-for="item in newsItems" :key="item.id" :item="item" />
       <div>
-        <p class="more" @click="loadMore">more</p>
+        <p>
+          <span v-if="!loading" class="more" @click="loadMore">more</span>
+        </p>
+        <div v-if="loading">Loading</div>
       </div>
     </div>
   </div>
@@ -26,6 +28,7 @@ export default {
     const { loading, newsItems } = useState(["loading", "newsItems"]);
 
     const { GET_NEWS_ITEMS } = useActions([types.GET_NEWS_ITEMS]);
+    const currentPage = value(1);
 
     const updateType = type => {
       currentPage.value = 1;
@@ -41,7 +44,6 @@ export default {
       }
     );
 
-    const currentPage = value(1);
     onCreated(() => {
       updateType(route.value.params.type);
     });
@@ -75,5 +77,6 @@ export default {
 .more {
   color: #828282;
   font-size: 0.8rem;
+  cursor: pointer !important;
 }
 </style>
