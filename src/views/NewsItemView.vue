@@ -45,6 +45,7 @@ export default {
 .current-news-item {
   padding: 1em;
 }
+
 .news-item-title::before {
   content: none;
 }
