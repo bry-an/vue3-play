@@ -3,6 +3,7 @@
     <div v-if="loading">Loading...</div>
     <div v-if="!loading">
       <news-item :item="currentNewsItem" />
+      <comment v-for="comment in currentNewsItem.comments" :key="comment.id" :data="comment" />
     </div>
   </div>
 </template>
@@ -13,10 +14,12 @@ import { useState, useActions, useRouter } from "@u3u/vue-hooks";
 
 import types from "../types";
 import NewsItem from "../components/NewsItem";
+import Comment from "../components/Comment";
 
 export default {
   components: {
-    NewsItem
+    NewsItem,
+    Comment
   },
   setup() {
     const { loading, currentNewsItem } = useState([
