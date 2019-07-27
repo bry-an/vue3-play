@@ -2,11 +2,11 @@
   <div class="nav-bar">
     <p>Hack0r News</p>
     <div>
-      <router-link to="/">News</router-link>
-      <router-link to="/">Newest</router-link>
-      <router-link to="/">Show</router-link>
-      <router-link to="/">Ask</router-link>
-      <router-link to="/">Jobs</router-link>
+      <router-link to="/news">News</router-link>
+      <router-link to="/newest">Newest</router-link>
+      <router-link to="/show">Show</router-link>
+      <router-link to="/ask">Ask</router-link>
+      <router-link to="/jobs">Jobs</router-link>
     </div>
   </div>
 </template>
